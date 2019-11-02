@@ -1,13 +1,16 @@
 Package: reproseries
-Title: What the Package Does (One Line, Title Case)
+Title: example for the series of reproducible analysis posts on isaacverm.github.io
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Isaac",
+           family = "Verminck",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "isaacverm@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: example for the series of reproducible analysis posts on isaacverm.github.io
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
+Imports:
+  tidyverse,
+  timetk
