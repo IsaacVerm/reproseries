@@ -7,10 +7,13 @@ Authors@R:
            role = c("aut", "cre"),
            email = "isaacverm@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: example for the series of reproducible analysis posts on isaacverm.github.io
-License: What license it uses
+Description: Example for the series of reproducible analysis posts.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
-  tidyverse,
-  timetk
+  dplyr,
+  ggplot2,
+  tidyr,
+  timetk,
+  magrittr
