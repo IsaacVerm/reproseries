@@ -17,3 +17,5 @@ Imports:
   tidyr,
   timetk,
   magrittr
+Suggests: 
+    testthat (>= 2.1.0)
