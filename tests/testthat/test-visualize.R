@@ -1,6 +1,7 @@
 test_that("plotAvgTemperaturesByYear returns plot", {
   avg_temperatures_by_year <- nottem %>%
-    tidyNottem %>%
+    temperatureSeriesToDf %>%
+    tidyTemperatures %>%
     addCelsiusColumn %>%
     summariseAvgTemperatureByYear
 

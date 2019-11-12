@@ -1,0 +1,44 @@
+---
+title: "nottingham-temperatures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{nottingham-temperatures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(reproseries)
+library(magrittr)
+```
+
+The `reproseries` package itself is not sufficient, we need `magrittr` to pipe functions together.
+
+# Introduction
+
+This vignette shows what you can do with the functions in the `reproseries` package. Code is not hidden so you can follow along nicely.
+
+# Data
+
+The functions are written to be used on the built-in `nottem` dataset. This dataset looks like this:
+
+```{r}
+timetk::tk_tbl(nottem) %>% glimpse
+```
+
+We first transform `nottem` from a time series in a dataframe object. This way `glimpse` gives us a clearer overview of what the dataset looks like.
+
+
+
+# Analysis phases
+
+## Tidy
+
+# Summary

@@ -1,6 +1,7 @@
 test_that("calculateAutoCorrelation() gives number between 0 and 1", {
   correlation <- nottem %>%
-    tidyNottem %>%
+    temperatureSeriesToDf %>%
+    tidyTemperatures %>%
     addCelsiusColumn %>%
     summariseAvgTemperatureByYear %>%
     calculateAutoCorrelation

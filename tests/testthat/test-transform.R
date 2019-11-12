@@ -1,17 +1,18 @@
 library(dplyr)
 
-tidy_nottem <- nottem %>%
-  tidyNottem
+tidy_temperatures <- nottem %>%
+  temperatureSeriesToDf %>%
+  tidyTemperatures
 
 test_that("addCelsiusColumn() returns data.frame", {
-  tidy_nottem %>%
+  tidy_temperatures %>%
     addCelsiusColumn %>%
     expect_is("data.frame")
 
 })
 
 test_that("addCelsiusColumn() creates fahrenheit and celcius columns", {
-  columns <- tidy_nottem %>%
+  columns <- tidy_temperatures %>%
     addCelsiusColumn %>%
     colnames
 
@@ -22,12 +23,12 @@ test_that("addCelsiusColumn() creates fahrenheit and celcius columns", {
 })
 
 test_that("summariseAvgTemperatureByYear() throws error if there's no celsius column", {
-  expect_error(tidy_nottem %>%
+  expect_error(tidy_temperatures %>%
                  summariseAvgTemperatureByYear)
 })
 
 test_that("summariseAvgTemperatureByYear() returns data.frame", {
-  tidy_nottem %>%
+  tidy_temperatures %>%
     addCelsiusColumn %>%
     summariseAvgTemperatureByYear %>%
     expect_is("data.frame")
@@ -35,9 +36,12 @@ test_that("summariseAvgTemperatureByYear() returns data.frame", {
 })
 
 test_that("summariseAvgTemperatureByYear() groups by year", {
-  years <- unique(nottem %>% tidyNottem %>% dplyr::pull(year))
+  years <- unique(nottem %>%
+                    temperatureSeriesToDf %>%
+                    tidyTemperatures %>%
+                    dplyr::pull(year))
 
-  tidy_nottem %>%
+  tidy_temperatures %>%
     addCelsiusColumn %>%
     summariseAvgTemperatureByYear %>%
     dplyr::pull(year) %>%
@@ -46,7 +50,7 @@ test_that("summariseAvgTemperatureByYear() groups by year", {
 })
 
 test_that("summariseAvgTemperatureByYear() has year and avgTemperature columns", {
-  tidy_nottem %>%
+  tidy_temperatures %>%
     addCelsiusColumn %>%
     summariseAvgTemperatureByYear %>%
     colnames %>%
