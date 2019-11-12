@@ -4,8 +4,27 @@
 \alias{plotAvgTemperaturesByYear}
 \title{Plot of average temperatures by year}
 \usage{
-plotAvgTemperaturesByYear(avg_temperatures)
+plotAvgTemperaturesByYear(avg_temperatures, place = "Nottingham")
+}
+\arguments{
+\item{avg_temperatures}{Data.frame. Has years and their corresponding average temperature.}
+
+\item{place}{String. It's assumed this function is called with the nottem built-in dataset.
+This dataset records the temperatures in Nottingham. Nottingham is the default argument.
+You can override this argument if the need arises.}
+}
+\value{
+ggplot object
 }
 \description{
-\code{plotAvgTemperaturesByYear} plots the average temperature by year in a line graph
+\code{plotAvgTemperaturesByYear} plots the average temperature by year in a line graph.
+}
+\details{
+This function plots the average temperature by year.
+It also automatically updates the title so there's no need to specify the title yourself.
+}
+\examples{
+avg_temperatures <- data.frame(year = c(1920, 1921, 1922, 1923),
+                               avgTemperature = c(5, 10, 8, 9))
+plotAvgTemperaturesByYear(avg_temperatures)
 }
