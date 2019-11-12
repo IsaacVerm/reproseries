@@ -1,7 +1,9 @@
+#' @export
 temperatureSeriesToDf <- function(temperature_series) {
   timetk::tk_tbl(temperature_series)
 }
 
+#' @export
 tidyTemperatures <- function(temperatures) {
   temperatures %>%
     tidyr::separate(col = index,

@@ -42,5 +42,6 @@ plotAvgTemperaturesByYear <- function(avg_temperatures,
                   ggplot2::aes(x = year, y = avgTemperature)) +
     ggplot2::geom_line(group = 1) +
     ggplot2::labs(title = createTitle(avg_temperatures, place),
-                  y = "average temperature")
+                  y = "average temperature") +
+    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90))
 }

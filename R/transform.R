@@ -1,9 +1,11 @@
+#' @export
 addCelsiusColumn <- function(temperatures) {
   temperatures %>%
     dplyr::mutate(celsius = (value - 32) * 5/9) %>%
     dplyr::rename(fahrenheit = value)
 }
 
+#' @export
 summariseAvgTemperatureByYear <- function(temperatures) {
   temperatures %>%
     dplyr::group_by(year) %>%

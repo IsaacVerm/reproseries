@@ -30,15 +30,69 @@ This vignette shows what you can do with the functions in the `reproseries` pack
 The functions are written to be used on the built-in `nottem` dataset. This dataset looks like this:
 
 ```{r}
-timetk::tk_tbl(nottem) %>% glimpse
+temperatures <- nottem %>%
+  temperatureSeriesToDf
+
+temperatures %>% str
 ```
 
-We first transform `nottem` from a time series in a dataframe object. This way `glimpse` gives us a clearer overview of what the dataset looks like.
-
-
+We first transform `nottem` from a time series in a dataframe object. This way `str` gives us a clearer overview of what the dataset looks like.
 
 # Analysis phases
 
 ## Tidy
 
+The raw `nottem` dataset is not tidy since variables are spread across columns. There are 3 variables (month, year and temperature) but there are 12 columns (one for each month). Let's fix this:
+
+```{r}
+temperatures <- temperatures %>% 
+  tidyTemperatures
+
+temperatures %>% str
+```
+
+Now we have the 3 variables we need. Month and year are clear, value refers to the temperature in fahrenheit. In the next step we'll deal with this vague `value` variable.
+
+## Transform
+
+We're no Americans so transform fahrenheits to celsius.
+
+```{r}
+temperatures <- temperatures %>% 
+  addCelsiusColumn
+
+temperatures %>% str
+```
+
+In preparation of the modeling and visualisation we already calculate an average temperature per year.
+
+```{r}
+avg_temperature_by_year <- temperatures %>% 
+  summariseAvgTemperatureByYear
+
+avg_temperature_by_year %>% str
+```
+
+## Visualize
+
+How did the average temperature evolve over the years?
+
+```{r}
+avg_temperature_by_year %>%
+  plotAvgTemperaturesByYear
+```
+
+## Model
+
+Is there a trend in the average temperatures?
+
+```{r}
+avg_temperature_by_year %>%
+  calculateAutoCorrelation
+```
+
+0.10 is rather low so there doesn't seem to be any trend.
+
 # Summary
+
+All the functions available in the `reproseries` package have been introduced above.
