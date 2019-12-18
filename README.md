@@ -1,5 +1,9 @@
 # reproseries
 
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.org/IsaacVerm/reproseries.svg?branch=master)](https://travis-ci.org/IsaacVerm/reproseries)
+  <!-- badges: end -->
+
 This repository contains code used as example for the reproducible analysis series on my blog:
 
 - [outline](https://isaacverm.github.io/posts/reproducible-analysis-outline/)
