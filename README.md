@@ -105,3 +105,33 @@ In that case you have to import the `magrittr` package before in order to have a
 ```
 library(magrittr)
 ```
+
+## airflow
+
+Airflow is a Python package called `apache-airflow`. The basic package can be extended with [subpackages](https://airflow.apache.org/docs/stable/installation.html).
+
+It's a best practice to use [virtual environments](https://docs.python.org/3/tutorial/venv.html) to manage packages.
+
+To work with Airflow we need to :
+
+- create a virtual environment
+- activate this virtual environment
+- install the packages needed (e.g. Airflow)
+
+Create a virtual environment:
+
+```
+python3 -m venv venv
+```
+
+Activate the virtual environment just created:
+
+```
+source venv/bin/activate
+```
+
+The `requirements.txt` file contains a list of packages to be installed. To install those packages:
+
+```
+pip install -r requirements.txt
+```
