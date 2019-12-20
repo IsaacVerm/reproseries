@@ -106,7 +106,9 @@ In that case you have to import the `magrittr` package before in order to have a
 library(magrittr)
 ```
 
-## airflow
+## Airflow
+
+### Installation
 
 Airflow is a Python package called `apache-airflow`. The basic package can be extended with [subpackages](https://airflow.apache.org/docs/stable/installation.html).
 
@@ -135,3 +137,25 @@ The `requirements.txt` file contains a list of packages to be installed. To inst
 ```
 pip install -r requirements.txt
 ```
+
+### Prerequisites
+
+[Installing Airflow alone isn't sufficient](https://airflow.apache.org/docs/stable/start.html), you also have to:
+
+- set the AIRFLOW_HOME environment variable
+- initialize the Airflow database
+- specify where the `reproseries` DAG files can be found
+
+Set Airflow home:
+
+```
+export AIRFLOW_HOME=~/airflow
+```
+
+Initialize the Airflow database:
+
+```
+airflow initdb
+```
+
+To point Airflow to the `reproseries` DAG files, you have to modify the `dags_folder` variable at `/airflow/airflow.cfg`. In my case this points to `/Users/isaacverminck/Documents/reproseries/airflow/dags`.
