@@ -4,3 +4,4 @@
 *.png
 inst/doc
 venv/
+airflow/dags/__pycache__*
