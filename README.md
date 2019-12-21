@@ -158,4 +158,18 @@ Initialize the Airflow database:
 airflow initdb
 ```
 
-To point Airflow to the `reproseries` DAG files, you have to modify the `dags_folder` variable at `/airflow/airflow.cfg`. In my case this points to `/Users/isaacverminck/Documents/reproseries/airflow/dags`.
+To point Airflow to the `reproseries` DAG files, you have to modify the `dags_folder` variable at `~/airflow/airflow.cfg`. In my case this points to `/Users/isaacverminck/Documents/reproseries/airflow/dags`.
+
+### running airflow
+
+Run the analysis (the start date doesn't matter so much at the moment):
+
+```
+airflow backfill analysis -s 2019-12-01
+```
+
+You can get an overview of the status of tasks (open in a separate terminal):
+
+```
+airflow webserver
+```
