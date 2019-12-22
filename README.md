@@ -160,16 +160,22 @@ airflow initdb
 
 To point Airflow to the `reproseries` DAG files, you have to modify the `dags_folder` variable at `~/airflow/airflow.cfg`. In my case this points to `/Users/isaacverminck/Documents/reproseries/airflow/dags`.
 
-### running airflow
+### Running Airflow
 
 Run the analysis (the start date doesn't matter so much at the moment):
 
 ```
-airflow backfill analysis -s 2019-12-01
+airflow backfill temperatures -s 2019-12-01
 ```
 
 You can get an overview of the status of tasks (open in a separate terminal):
 
 ```
 airflow webserver
+```
+
+You can also run the scripts used by Airflow separately. Scripts can be found in the [exec](http://r-pkgs.had.co.nz/misc.html) folder.
+
+```
+./exec/tidy-script.R -p data/tidy-temperatures.csv
 ```
