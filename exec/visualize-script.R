@@ -6,7 +6,7 @@ library(ggplot2)
 library(docopt)
 
 'Usage:
-transform-script.R <input_path> <output_folder>
+visualize-script.R <input_path> <output_folder>
 
 ]' -> doc
 
