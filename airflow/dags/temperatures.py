@@ -22,4 +22,9 @@ transform = BashOperator(
     bash_command=f'{os.getcwd()}/exec/transform-script.R {os.getcwd()}/data/tidy-temperatures.csv {os.getcwd()}/data/transform-temperatures.csv',
     dag=dag)
 
-clean >> tidy >> transform
+visualize = BashOperator(
+    task_id='visualize',
+    bash_command=f'{os.getcwd()}/exec/visualize-script.R {os.getcwd()}/data/transform-temperatures.csv {os.getcwd()}/data/',
+    dag=dag)
+
+clean >> tidy >> transform >> visualize
