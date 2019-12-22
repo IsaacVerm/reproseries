@@ -177,5 +177,5 @@ airflow webserver
 You can also run the scripts used by Airflow separately. Scripts can be found in the [exec](http://r-pkgs.had.co.nz/misc.html) folder.
 
 ```
-./exec/tidy-script.R -p data/tidy-temperatures.csv
+./exec/tidy-script.R ./data/tidy-temperatures.csv
 ```
