@@ -5,7 +5,7 @@ https://github.com/apache/airflow/blob/master/airflow/example_dags/tutorial.py
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
-
+import os
 
 default_args = {
     'owner': 'Airflow',
@@ -27,5 +27,5 @@ dag = DAG(
 
 t1 = BashOperator(
     task_id='tidy',
-    bash_command='/Users/isaacverminck/Documents/reproseries/exec/tidy-script.R ',
+    bash_command=f'{os.getcwd()}/exec/tidy-script.R -p {os.getcwd()}/data/analysis-test.csv',
     dag=dag)
