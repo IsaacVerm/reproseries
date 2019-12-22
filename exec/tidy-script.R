@@ -5,17 +5,14 @@ library(readr)
 library(docopt)
 
 'Usage:
-tidy-script.R [-p <path>]
-
-Options:
--p Path to write to
+tidy-script.R <output_path>
 
 ]' -> doc
 
-opts <- docopt(doc)
+arguments <- docopt(doc)
 
 nottem %>%
   reproseries::temperatureSeriesToDf() %>%
   reproseries::tidyTemperatures() %>%
-  readr::write_csv(path = opts$p)
+  readr::write_csv(path = arguments$output_path)
 
