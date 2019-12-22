@@ -27,4 +27,9 @@ visualize = BashOperator(
     bash_command=f'{os.getcwd()}/exec/visualize-script.R {os.getcwd()}/data/transform-temperatures.csv {os.getcwd()}/data/',
     dag=dag)
 
-clean >> tidy >> transform >> visualize
+model = BashOperator(
+    task_id='model',
+    bash_command=f'{os.getcwd()}/exec/model-script.R {os.getcwd()}/data/transform-temperatures.csv {os.getcwd()}/data/',
+    dag=dag)
+
+clean >> tidy >> transform >> [visualize, model]
