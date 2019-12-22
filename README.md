@@ -12,6 +12,7 @@ This repository contains code used as example for the reproducible analysis seri
 - [testing](https://isaacverm.github.io/posts/reproducible-analysis-testing/)
 - [documentation](https://isaacverm.github.io/posts/reproducible-analysis-documentation/)
 - [literate programming](https://isaacverm.github.io/posts/reproducible-analysis-literate-programming/)
+- [orchestration](https://isaacverm.github.io/posts/reproducible-analysis-orchestration/)
 
 ## devtools
 
