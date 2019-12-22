@@ -2,8 +2,8 @@
 library(magrittr)
 library(reproseries)
 library(readr)
+library(docopt)
 
-require(docopt)
 'Usage:
 tidy-script.R [-p <path>]
 
