@@ -174,7 +174,7 @@ You can get an overview of the status of tasks (open in a separate terminal):
 airflow webserver
 ```
 
-You can also run the scripts used by Airflow separately. Scripts can be found in the [exec](http://r-pkgs.had.co.nz/misc.html) folder.
+You can also run the scripts used by Airflow separately. Scripts can be found in the [exec](http://r-pkgs.had.co.nz/misc.html) folder. Make sure they're executable by running `chmod +x`.
 
 ```
 ./exec/tidy-script.R ./data/tidy-temperatures.csv
