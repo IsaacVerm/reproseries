@@ -180,3 +180,11 @@ You can also run the scripts used by Airflow separately. Scripts can be found in
 ```
 ./exec/tidy-script.R ./data/tidy-temperatures.csv
 ```
+
+## Docker
+
+Build the image (assuming you're in the root):
+
+```
+docker build .
+```
