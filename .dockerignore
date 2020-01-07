@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+*.png
+inst/doc
+venv/
+airflow/dags/__pycache__*
+data/
+Rplots.pdf
