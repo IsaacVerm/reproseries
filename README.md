@@ -192,8 +192,7 @@ docker build -t repro .
 Run the image:
 
 ```
-docker run -e PASSWORD="" -v /Users/isaacverminck/Documents/reproseries/data
-:/data repro
+docker run -e PASSWORD="" -v /Users/isaacverminck/Documents/reproseries/data:/data repro
 ```
 
 A volume has been configured so data is available in the `/data` folder locally.
