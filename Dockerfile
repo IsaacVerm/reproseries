@@ -1,13 +1,9 @@
 FROM rocker/tidyverse:3.6.2
 
-COPY reproseries.tar.gz /
+COPY . /reproseries
 
-COPY /exec/tidy-script.R /
-
-RUN R -e "install.packages('timetk')"
-
-RUN R CMD INSTALL reproseries.tar.gz
+RUN R -e "devtools::install('reproseries')"
 
 RUN mkdir data
 
-CMD ./tidy-script.R data/tidy-temperatures.csv
+CMD ./reproseries/exec/tidy-script.R data/tidy-temperatures.csv
