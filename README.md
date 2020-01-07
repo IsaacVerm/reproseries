@@ -196,3 +196,9 @@ docker run -e PASSWORD="" -v /Users/isaacverminck/Documents/reproseries/data:/da
 ```
 
 A volume has been configured so data is available in the `/data` folder locally.
+
+[Push image](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html) to Docker Hub:
+
+```
+docker push isaacverminck/reproseries:repro
+```
